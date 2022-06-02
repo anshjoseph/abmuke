@@ -8,6 +8,7 @@ import android.app.AlertDialog;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.TestLooperManager;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -158,7 +159,51 @@ public class MainActivity extends AppCompatActivity {
         TextView loginuser = view.findViewById(R.id.loginuser);
         TextView usermail = view.findViewById(R.id.useremail);
         TextView logintxt = view.findViewById(R.id.logintxt);
+        // menu btns
+        TextView report = view.findViewById(R.id.report);
+        TextView contactUs = view.findViewById(R.id.contact);
+        TextView help = view.findViewById(R.id.help);
+        TextView policy = view.findViewById(R.id.policy);
+        // menu btns
+        report.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(sharedPreferences.getString("id",null)==null)
+                Toast.makeText(MainActivity.this, "you need to login", Toast.LENGTH_SHORT).show();
+                else{
+                    startActivity(new Intent(MainActivity.this,Clientreport.class));
 
+                }
+            }
+        });
+
+        contactUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,ContactUs.class));
+
+            }
+        });
+
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,ClientHelp.class));
+
+            }
+        });
+
+        policy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,ClientPolicy.class));
+
+            }
+        });
+
+
+
+        // login logout btn
         if(sharedPreferences.getString("id",null)==null){
             login.setOnClickListener(new View.OnClickListener() {
                 @Override
