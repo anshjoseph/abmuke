@@ -3,74 +3,164 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="76dp"
-        android:layout_height="76dp"
-        android:layout_marginTop="36dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.093"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/common_google_signin_btn_icon_light_normal" />
 
-    <Button
-        android:id="@+id/button"
+    <View
+        android:id="@+id/top"
         android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="148dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/report_shape"
-        android:text="Report"
+        android:layout_height="106dp"
+        android:background="@drawable/menuback"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></View>
+
+    <View
+        android:id="@+id/username"
+        android:layout_width="325dp"
+        android:layout_height="65dp"
+
+        android:layout_marginTop="20dp"
+        android:background="@drawable/menuuserback"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/top"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/report_shape"
-        android:text="CONTACT us"
+    <TextView
+        android:id="@+id/Report"
+        android:layout_width="185dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/archivo"
+        android:text="REPORT"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@+id/contact"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.256"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/top" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/report_shape"
-        android:text="help"
+    <TextView
+        android:id="@+id/contact"
+        android:layout_width="185dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/archivo"
+        android:text="CONTACT US"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/help"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.256"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/Report" />
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/help"
+        android:layout_width="185dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/archivo"
+        android:text="HELP"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/policy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.256"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contact" />
+
+    <TextView
+        android:id="@+id/policy"
+        android:layout_width="185dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/archivo"
+        android:text="POLICY"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.256"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/help" />
+
+    <ImageView
+        android:id="@+id/profilephoto"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        app:layout_constraintBottom_toBottomOf="@+id/username"
+        app:layout_constraintEnd_toEndOf="@+id/username"
+        app:layout_constraintHorizontal_bias="0.167"
+        app:layout_constraintStart_toStartOf="@+id/username"
+        app:layout_constraintTop_toTopOf="@+id/username"
+        app:layout_constraintVertical_bias="0.555"
+        app:srcCompat="@drawable/profileicon" />
+
+    <TextView
+        android:id="@+id/loginuser"
+        android:layout_width="161dp"
+        android:layout_height="26dp"
+        android:text="Guest"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/username"
+        app:layout_constraintEnd_toEndOf="@+id/username"
+        app:layout_constraintHorizontal_bias="0.344"
+        app:layout_constraintStart_toEndOf="@+id/profilephoto"
+        app:layout_constraintTop_toTopOf="@+id/username"
+        app:layout_constraintVertical_bias="0.214" />
+
+    <TextView
+        android:id="@+id/useremail"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/report_shape"
-        android:text="policy"
+        android:text="guest@gmail.com"
+        app:layout_constraintEnd_toEndOf="@+id/username"
+        app:layout_constraintHorizontal_bias="0.236"
+        app:layout_constraintStart_toEndOf="@+id/profilephoto"
+        app:layout_constraintTop_toBottomOf="@+id/loginuser" />
+
+    <View
+        android:id="@+id/login"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/loginbtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.904"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/policy"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/logintxt"
+        android:layout_width="50dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Login"
+        android:textColor="#F8F5F5"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/login"
+        app:layout_constraintEnd_toEndOf="@+id/login"
+        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintStart_toStartOf="@+id/login"
+        app:layout_constraintTop_toTopOf="@+id/login"
+        app:layout_constraintVertical_bias="0.473" />
+
+    <ImageView
+        android:id="@+id/loginimg"
+        android:layout_width="20dp"
+        android:layout_height="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/login"
+        app:layout_constraintEnd_toEndOf="@+id/login"
+        app:layout_constraintHorizontal_bias="0.27"
+        app:layout_constraintStart_toEndOf="@+id/logintxt"
+        app:layout_constraintTop_toTopOf="@+id/login"
+        app:layout_constraintVertical_bias="0.454"
+        app:srcCompat="@drawable/login" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

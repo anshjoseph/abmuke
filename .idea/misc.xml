@@ -5,15 +5,31 @@
       <map>
         <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.199" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/drawable/camera.xml" value="0.1055" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/drawable/chechtxt_btn.xml" value="0.222" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/drawable/email.xml" value="0.1905" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/drawable/ic_launcher_background.xml" value="0.199" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/drawable/img_btn_cricle.xml" value="0.1235" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/drawable/login.xml" value="0.1905" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/drawable/loginbtn.xml" value="0.3525" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/drawable/menu_icon.xml" value="0.199" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/drawable/menuback.xml" value="0.2485" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/drawable/menuuserback.xml" value="0.206" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/drawable/mic.xml" value="0.1235" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/drawable/profileicon.xml" value="0.1" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/drawable/profileiconcircle.xml" value="0.1905" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/drawable/redcricle.xml" value="0.1" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/drawable/report_shape.xml" value="0.199" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/layout/activity_main.xml" value="0.3125" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/layout/activity_report.xml" value="0.11458333333333333" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/layout/activity_show_response.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/layout/checktxt.xml" value="0.22" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/layout/cwebview.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/layout/fragment_audio_view.xml" value="0.36102564102564105" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/layout/fragment_camera_view.xml" value="0.34564102564102567" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/layout/fragment_menudisplay.xml" value="0.1787037037037037" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/layout/fragment_userblk.xml" value="0.2611111111111111" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/layout/fragment_webviewres.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/layout/loginprocess.xml" value="0.33" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/layout/menushow.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/abmuke01/app/src/main/res/menu/home_menu.xml" value="0.36666666666666664" />
       </map>

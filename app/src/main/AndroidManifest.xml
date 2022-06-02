@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.abmuke01">
+
     <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-feature android:name="android.hardware.camera" />
 
     <application
@@ -11,6 +13,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Abmuke01">
+        <activity
+            android:name=".Clientreport"
+            android:exported="false" />
+        <activity
+            android:name=".menubtns.report"
+            android:exported="false" />
+        <activity
+            android:name=".showResponse"
+            android:exported="false" />
+        <activity
+            android:name=".loginprocess"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
