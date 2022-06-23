@@ -44,28 +44,41 @@ public class loginprocess extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // string
                 String name = nickname.getText().toString();
                 String emailid = email.getText().toString();
                 String pass = password.getText().toString();
+
+
                 AsyncRun_onSuccess success = new AsyncRun_onSuccess() {
                     @Override
                     public void run(Response response) {
 
                         UserLoginAPI_Model userLogin = (UserLoginAPI_Model) response.body();
-                        if(userLogin.getCode() != 3){
+                        if(userLogin.getCode() == 3){
                             SharedPreferences.Editor edi = sharedPreferences.edit();
                             edi.putString("name",name);
                             edi.putString("email",emailid);
-                            UserLoginAPI.siginUser(name, emailid, new AsyncRun_onSuccess() {
+
+
+                            // sigin action
+                            UserLoginAPI.siginUser(emailid,pass,
+                                    new AsyncRun_onSuccess() {
                                 @Override
-                                public void run(Response response) {
-                                    UserLoginAPI_Model userLoginS = (UserLoginAPI_Model) response.body();
-                                    edi.putString("id",userLoginS.getAuthcode());
-                                    edi.commit();
-                                    startActivity(new Intent(loginprocess.this,MainActivity.class));
-                                    finish();
+                                public void run(Response responseSigin) {
+                                    UserLoginAPI_Model userSigin = (UserLoginAPI_Model) responseSigin.body();
+                                    Log.d("sigin",userSigin.toString());
+
+                                    if(userSigin.getCode()==5) {
+                                        edi.putString("id", userSigin.getAuthcode());
+                                        edi.commit();
+                                        startActivity(new Intent(loginprocess.this, MainActivity.class));
+                                        finish();
+                                    }else
+                                        Toast.makeText(loginprocess.this, "Auth error", Toast.LENGTH_SHORT).show();
                                 }
-                            }, new AsyncRun_onFail() {
+                            },
+                                    new AsyncRun_onFail() {
                                 @Override
                                 public void run() {
                                     Toast.makeText(loginprocess.this, "Some thing went wrong", Toast.LENGTH_SHORT).show();
@@ -73,7 +86,7 @@ public class loginprocess extends AppCompatActivity {
                             });
 
                         }
-                        else Toast.makeText(loginprocess.this, "User is alredy exit", Toast.LENGTH_SHORT).show();
+                        else Toast.makeText(loginprocess.this, "Some went wrong", Toast.LENGTH_SHORT).show();
 
                     }
                 };
@@ -83,6 +96,10 @@ public class loginprocess extends AppCompatActivity {
                         Toast.makeText(loginprocess.this, "Sorry network", Toast.LENGTH_SHORT).show();
                     }
                 };
+
+
+
+                // login api call
                 UserLoginAPI.makeUser(emailid, pass,success,fail);
 
             }

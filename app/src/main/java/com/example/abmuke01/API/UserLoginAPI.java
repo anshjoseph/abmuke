@@ -24,7 +24,7 @@ public class UserLoginAPI {
     private static com.example.abmuke01.API.Interface.UserLoginAPI api = retrofit.create(com.example.abmuke01.API.Interface.UserLoginAPI.class);
 
 
-    public static void makeUser(String username, String password, AsyncRun_onSuccess onSuccess, AsyncRun_onFail onFail){
+    public static void siginUser(String username, String password, AsyncRun_onSuccess onSuccess, AsyncRun_onFail onFail){
         Call<UserLoginAPI_Model> response = api.login(new UserLoginAPI_Payload(username,password));
         response.enqueue(new Callback<UserLoginAPI_Model>() {
             @Override
@@ -38,7 +38,7 @@ public class UserLoginAPI {
             }
         });
     }
-    public static void siginUser(String username, String password, AsyncRun_onSuccess onSuccess, AsyncRun_onFail onFail){
+    public static void makeUser(String username, String password, AsyncRun_onSuccess onSuccess, AsyncRun_onFail onFail){
         Call<UserLoginAPI_Model> response = api.sigin(new UserLoginAPI_Payload(username,password));
         response.enqueue(new Callback<UserLoginAPI_Model>() {
             @Override
