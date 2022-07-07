@@ -29,6 +29,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/back" />
 
+    <TextView
+        android:id="@+id/output"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="loading ..."
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/webView" />
+
     <WebView
         android:id="@+id/webView"
         android:layout_width="300dp"
