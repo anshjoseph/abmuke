@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private  ImageButton imageButton;
     private ImageView menubtn;
+    private ImageView add;
 
 
     // final var's
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         // video
         private Uri videoUri;
         private boolean videoUriStatus =  false;
+
 
     // fragment var's
     audioView audio;
@@ -82,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomNavigationView2);
         imageButton = findViewById(R.id.imageButton);
         menubtn = findViewById(R.id.profileicon);
+        add = findViewById(R.id.imageView10);
+        add.setVisibility(View.GONE);
 
 
 
@@ -89,15 +93,18 @@ public class MainActivity extends AppCompatActivity {
         menubtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                ViewGroup viewGroup = findViewById(android.R.id.content);
-                View dialogView = LayoutInflater.from(v.getContext()).inflate(R.layout.menushow, viewGroup, false);
-                // for view control
-                MainActivity.this.menu(dialogView);
-                //
-                builder.setView(dialogView);
-                AlertDialog alertDialog = builder.create();
-                alertDialog.show();
+                  if(sharedPreferences.getString("id",null)!=null)
+                  startActivity(new Intent(MainActivity.this,profile.class));
+                  else startActivity(new Intent(MainActivity.this,nonlprofile.class));
+//                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+//                ViewGroup viewGroup = findViewById(android.R.id.content);
+//                View dialogView = LayoutInflater.from(v.getContext()).inflate(R.layout.menushow, viewGroup, false);
+//                // for view control
+//                MainActivity.this.menu(dialogView);
+//                //
+//                builder.setView(dialogView);
+//                AlertDialog alertDialog = builder.create();
+//                alertDialog.show();
             }
         });
         // default mic
@@ -138,9 +145,11 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.audio:
+                        add.setVisibility(View.GONE);
                         audio();
                         return true;
                     case R.id.camera:
+                        add.setVisibility(View.VISIBLE);
                         camera();
                         return true;
                 }
@@ -203,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        // login logout btn
+        // login plogout btn
         if(sharedPreferences.getString("id",null)==null){
             login.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -326,7 +335,8 @@ public class MainActivity extends AppCompatActivity {
                 if(data!=null){
                     videoUri = data.getData();
                     videoUriStatus = true;
-                    Toast.makeText(this, "service is not aviable", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(this, "service is not aviable", Toast.LENGTH_SHORT).show();
+
                     camera.getCameraView(videoUri,videoUriStatus);
                 }
                 break;
@@ -334,6 +344,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void help(View view){
+        startActivity(new Intent(MainActivity.this,ClientHelp.class));
+    }
+    public void add(View view){
+        startActivity(new Intent(this,prediction.class));
+    }
 
 
 }
