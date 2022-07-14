@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
     private  ImageButton imageButton;
     private ImageView menubtn;
     private ImageView add;
+    private ImageView text;
+//    private ImageView addData;
 
 
     // final var's
@@ -85,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
         imageButton = findViewById(R.id.imageButton);
         menubtn = findViewById(R.id.profileicon);
         add = findViewById(R.id.imageView10);
+        text = findViewById(R.id.textadd);
         add.setVisibility(View.GONE);
 
 
@@ -146,10 +149,12 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.audio:
                         add.setVisibility(View.GONE);
+                        text.setVisibility(View.VISIBLE);
                         audio();
                         return true;
                     case R.id.camera:
                         add.setVisibility(View.VISIBLE);
+                        text.setVisibility(View.GONE);
                         camera();
                         return true;
                 }
@@ -349,6 +354,32 @@ public class MainActivity extends AppCompatActivity {
     }
     public void add(View view){
         startActivity(new Intent(this,prediction.class));
+    }
+    public void addText(View view){
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        ViewGroup viewGroup = findViewById(android.R.id.content);
+        View dialogView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.checktxt, viewGroup, false);
+//
+        EditText input = dialogView.findViewById(R.id.editdialog);
+        input.setText(" ");
+        View ok = dialogView.findViewById(R.id.ok);
+        ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent showres = new Intent(MainActivity.this,showResponse.class);
+                showres.putExtra("string",input.getText().toString());
+                startActivity(showres);
+            }
+        });
+
+        builder.setView(dialogView);
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+    public void addData(View view){
+        if(sharedPreferences.getString("id",null)!=null)
+            Toast.makeText(this, "login", Toast.LENGTH_SHORT).show();
+        else Toast.makeText(this, "login first", Toast.LENGTH_SHORT).show();
     }
 
 
