@@ -5,13 +5,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.animation.AlphaAnimation;
+import android.widget.TextView;
+
+import com.tomer.fadingtextview.FadingTextView;
 
 public class splashScreen extends AppCompatActivity {
 
+    FadingTextView fadingTextView;
+    String[] text
+            = { "   ", "ABMUKE" };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+        fadingTextView = findViewById(R.id.titleicon);
+//        fadingTextView.set
+        fadingTextView.setTexts(text);
+        fadingTextView.pause();
+
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
@@ -20,6 +32,6 @@ public class splashScreen extends AppCompatActivity {
                 finish();
 
             }
-        }, 2000);
+        }, 3000);
     }
 }
