@@ -25,8 +25,8 @@ public class datcolection extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        web = findViewById(R.id.webView2);
+        setContentView(R.layout.activity_datcolection);
+        web = findViewById(R.id.datacollect);
         web.loadUrl("http://117.254.197.7:8001/index/");
         WebSettings webSettings = web.getSettings();
         webSettings.setJavaScriptEnabled(true);

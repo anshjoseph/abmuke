@@ -378,7 +378,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void addData(View view){
         if(sharedPreferences.getString("id",null)!=null)
-            Toast.makeText(this, "login", Toast.LENGTH_SHORT).show();
+           startActivity(new Intent(this,datcolection.class));
         else Toast.makeText(this, "login first", Toast.LENGTH_SHORT).show();
     }
 
